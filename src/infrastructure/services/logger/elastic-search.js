@@ -1,5 +1,5 @@
 const log = message => {
-    console.log('Sending to Elastic Search: ', message);
+    console.log('Making my life miserable: ', message);
 }
 
 export default log;

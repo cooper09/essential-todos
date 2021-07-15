@@ -5,6 +5,11 @@ import { pageLoaded } from '../application/actions/ui';
 import { putTodo } from '../application/actions/todos';
 import { getLoading } from '../application/selectors/ui';
 
+//cooper's goodies
+import  Header  from './Header.js';
+import  Sidebar  from './Sidebar.js';
+import  Content  from './Content.js';
+
 export default () => {
     const dispatch = useDispatch();
     const todos = useSelector(getTodos);
@@ -14,23 +19,10 @@ export default () => {
     }, [dispatch]);
     return (
         <>
-            <h1>Essential Todos</h1>
-            {loading ? 'Loading todos...' : (
-                <ul>
-                    {todos.map(todo => (
-                        <li
-                            key={todo.id}
-                            style={{
-                                textDecoration: todo.completed ? 'line-through' : 'none',
-                                cursor: 'pointer',
-                            }}
-                            onClick={() => dispatch(putTodo({...todo, completed: !todo.completed }))}
-                        >
-                            {todo.title}
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <Header />
+            <Sidebar />
+            <Content data={todos} />
+
         </>
     )
 }
