@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodos } from '../application/selectors/todos';
 import { pageLoaded } from '../application/actions/ui';
-import { putTodo } from '../application/actions/todos';
+//import { putTodo } from '../application/actions/todos';
 import { getLoading } from '../application/selectors/ui';
 
 //cooper's goodies
