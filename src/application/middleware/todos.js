@@ -2,6 +2,7 @@ import { loadTodosFailure, loadTodosSuccess, LOAD_TODOS, PUT_TODO, setTodos } fr
 import * as uiActions from '../actions/ui';
 
 const loadTodosFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
+    //console.log("middleware - loadTodosFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_TODOS) {
@@ -17,8 +18,10 @@ const loadTodosFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
 }
 
 const putTodoFlow = () => ({ dispatch, getState }) => next => action => {
-    
+        
     if (action.type === PUT_TODO) {
+
+        alert("putTodoFlow")
         const oldTodosClone = getState().todos.allTodos.map(todo => ({...todo}));
 
         const newTodo = action.payload;
