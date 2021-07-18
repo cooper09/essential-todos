@@ -2,12 +2,12 @@ import { PAGE_LOADED } from "../actions/ui";
 import * as todosActions from '../actions/todos';
 
 const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
-    console.log("PageLoaderFlow - action: ", action )
+    console.log("middleware - PageLoaderFlow - action: ", action )
     next(action);
 
     if (action.type === PAGE_LOADED) {
         log('page loaded');
-        alert('page loaded....');
+        //alert('page loaded....');
         dispatch(todosActions.loadTodos);
     }
 }

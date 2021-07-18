@@ -13,13 +13,19 @@ const Sidebar = () => {
     height:100vh;
     `;
 
+    const dataObj = {
+        data: "more data",
+        test:"passed"
+    }
+
+    const goodie = "stinky feet";
+    
     return(
         <Sidebar>
             <h3>Sidebar</h3>
-            <button  onClick={() => dispatch(buttonClicked("Hello"))} >Click Me</button>  
+            <button onClick={() => dispatch(buttonClicked(dataObj))}>Click Me</button>  
         </Sidebar>
     )
-
 }
 
 export default Sidebar

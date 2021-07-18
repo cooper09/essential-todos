@@ -15,16 +15,17 @@ export default () => {
     const dispatch = useDispatch();
     const todos = useSelector(getTodos);
     const loading = useSelector(getLoading);
-    const data = useSelector(buttonClicked)
+    const storeData = useSelector(buttonClicked)
 
     useEffect(() => {
         dispatch(pageLoaded);
     }, [dispatch]);
     return (
         <>
+
             <Header />
             <Sidebar />
-            <Content data={todos} newData={data}/>
+            <Content data={todos} newData={storeData}/>
         </>
     )
 }

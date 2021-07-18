@@ -1,13 +1,13 @@
-import { BUTTON_CLICKED } from "../actions/eventOne";
+import { BUTTON_CLICKED, buttonClicked } from "../actions/eventOne";
 import * as todosActions from '../actions/todos';
 
 const buttonClickFlow = ({ log }) => ({ dispatch }) => next => action => {
     console.log("middleware - buttonClickFlow - action: ", action )
     next(action);
-    alert("buttonClickFlow")
+    //alert("Middleware eventOne - buttonClickFlow")
     if (action.type === BUTTON_CLICKED) {
         log('button clicked');
-        dispatch(eventOne.buttonClicked);
+      //  dispatch(buttonClicked.buttonClicked);
     }
 }
 

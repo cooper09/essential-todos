@@ -10,6 +10,12 @@ const Content = ({data, newData }) => {
     const dispatch = useDispatch();
     const todos = useSelector(getTodos);
 
+    let stinky = "";
+    for (const [key, value] of Object.entries(newData)) {
+        console.log("key: "+`${key}: ${value}`);
+        stinky = value;
+      }
+
     const Content = styled.section`
     padding: 2em;
     background: pink;
@@ -23,7 +29,7 @@ const Content = ({data, newData }) => {
         <>
         <Content>
         <h3>Content</h3>
-        <p>Our Data: {newData}</p>
+        <p>Our Data: {newData.data} </p>
         <ul>
         {data.map(todo => (
             <li
