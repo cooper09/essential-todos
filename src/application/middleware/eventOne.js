@@ -7,7 +7,6 @@ const buttonClickFlow = ({ log }) => ({ dispatch }) => next => action => {
     //alert("Middleware eventOne - buttonClickFlow")
     if (action.type === BUTTON_CLICKED) {
         log('button clicked');
-      //  dispatch(buttonClicked.buttonClicked);
     }
 }
 

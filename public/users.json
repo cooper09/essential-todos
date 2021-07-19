@@ -1,0 +1,12 @@
+# Query: getUsers
+# ContextLines: 1
+
+ 2 results - 2 files
+
+src/application/selectors/users.js:
+  1: export const getUsers = state => state.users.allUsers;
+
+src/views/index.js:
+  3  import { getTodos } from '../application/selectors/todos';
+  4: import { getUsers } from '../application/selectors/users';
+  5  import { pageLoaded } from '../application/actions/ui';
