@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodos } from '../application/selectors/todos';
+import { getUsers } from '../application/selectors/users';
 import { pageLoaded } from '../application/actions/ui';
+import { loadUsers } from '../application/actions/users';
+
 import { putTodo } from '../application/actions/todos';
 import { getLoading } from '../application/selectors/ui';
 
@@ -14,15 +17,17 @@ import { buttonClicked } from '../application/selectors/eventOne';
 export default () => {
     const dispatch = useDispatch();
     const todos = useSelector(getTodos);
+    const users = useSelector(getUsers);
     const loading = useSelector(getLoading);
     const storeData = useSelector(buttonClicked)
 
     useEffect(() => {
         dispatch(pageLoaded);
+//        dispatch(loadUsers);
     }, [dispatch]);
     return (
         <>
-
+           {users}
             <Header />
             <Sidebar />
             <Content data={todos} newData={storeData}/>

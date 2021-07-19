@@ -1,20 +1,7 @@
 import { LOAD_USERS_SUCCESS, SET_USERS, LOAD_USERS } from "../actions/users";
 
 const initialState = {
-    allUsers: [
-        {
-            user: {
-                first: "tom",
-                last: "thumb"
-            }
-        },
-        {
-            user: {
-                first: "tiny",
-                last: "tim"
-            }
-        }
-    ],
+    allUsers: [],
     error: null
 };
 
