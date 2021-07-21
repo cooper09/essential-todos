@@ -25,12 +25,20 @@ export default () => {
         dispatch(pageLoaded);
 //        dispatch(loadUsers);
     }, [dispatch]);
+
+
+    const showUsers = (user) =>{
+        users.map(()=>{
+            console.log("Our users: ", user )
+        })
+    }
+
     return (
         <>
-           {users}
+        
             <Header />
             <Sidebar />
-            <Content data={todos} newData={storeData}/>
+            <Content data={todos} newData={storeData} userData = {users}/>
         </>
     )
 }
