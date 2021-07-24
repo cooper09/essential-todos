@@ -1,0 +1,1 @@
+export const getViews = state => state.users.allViews;

@@ -23,7 +23,6 @@ export default () => {
 
     useEffect(() => {
         dispatch(pageLoaded);
-//        dispatch(loadUsers);
     }, [dispatch]);
 
 
