@@ -8,17 +8,16 @@ export const loadContacts = {
     type: LOAD_CONTACTS,
 };
 
-/*
-export const loadUsersSuccess = users => ({
-    type: LOAD_USERS_SUCCESS,
-    payload: users
+export const loadContactsSuccess = contacts => ({
+    type: LOAD_CONTACTS_SUCCESS,
+    payload: contacts
 });
 
-export const loadUsersFailure = error => ({
-    type: LOAD_USERS_FAILURE,
+export const loadContactsFailure = error => ({
+    type: LOAD_CONTACTS_FAILURE,
     payload: error,
 });
-
+/*
 export const setUsers = users => ({
     type: SET_USERS,
     payload: users,

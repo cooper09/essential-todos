@@ -15,7 +15,8 @@ const Content = ({data, newData, userData }) => {
 
     let stinky = "";
     for (const [key, value] of Object.entries(newData)) {
-        console.log("key: "+`${key}: ${value}`);
+        console.log("new data key: "+ Object.keys(newData) + " value: " + Object.values(newData));
+
         stinky = value;
       }
 
