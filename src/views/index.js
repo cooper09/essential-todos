@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTodos } from '../application/selectors/todos';
-import { getUsers } from '../application/selectors/users';
+//Actions
 import { pageLoaded } from '../application/actions/ui';
 import { loadUsers } from '../application/actions/users';
-
 import { putTodo } from '../application/actions/todos';
+
+//Selectors
+import { getTodos } from '../application/selectors/todos';
+import { getUsers } from '../application/selectors/users';
 import { getLoading } from '../application/selectors/ui';
 
 //cooper's goodies
