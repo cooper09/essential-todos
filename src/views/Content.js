@@ -4,10 +4,11 @@ import { putTodo } from '../application/actions/todos';
 import { getTodos } from '../application/selectors/todos';
 import styled from "styled-components";
 
-const Content = ({data, newData, userData }) => {
+const Content = ({data, newData, userData, contactData}) => {
     console.log("Content received data: ", data );
     console.log("Content New data: ",  newData );
-    console.log("Content User data: ",  userData );
+    console.log("Content Contact data: ",  contactData );
+    
     const dispatch = useDispatch();
     const todos = useSelector(getTodos);
     let firstName = "";

@@ -44,13 +44,20 @@ export default () => {
             console.log("Our users: ", user[0] )
         })
     }
+    
+
+    const showContacts = (contact) =>{
+        contacts.map(()=>{
+            console.log("Our contacts: ", contacts[0] )
+        })
+    }
 
     return (
         <>
         
             <Header />
             <Sidebar />
-            <Content data={todos} newData={eventData} userData = {users}/>
+            <Content data={todos} newData={eventData} userData = {users} contactData = {contacts}/>
         </>
     )
 }
