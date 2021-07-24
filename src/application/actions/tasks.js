@@ -7,3 +7,14 @@ export const PUT_CONTACT = '[TASKS] put';
 export const loadTASKS = {
     type: LOAD_TASKS,
 };
+
+export const loadTasksSuccess = tasks => ({
+    type: LOAD_TASKS_SUCCESS,
+    payload: tasks
+});
+
+export const loadTasksFailure = error => ({
+    type: LOAD_TASKS_FAILURE,
+    payload: error,
+});
+
