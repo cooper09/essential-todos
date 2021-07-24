@@ -28,12 +28,6 @@ export default () => {
     //Get all state data at once
     const contacts =  useSelector(getContacts);
 
-     try {
-            console.log("Index - contacts: ", contacts );
-     } catch (e) {
-            alert("Lost contact with contacts: ", e )
-        }
-
     useEffect(() => {
         dispatch(pageLoaded);
     }, [dispatch]);
@@ -44,7 +38,6 @@ export default () => {
             console.log("Our users: ", user[0] )
         })
     }
-    
 
     const showContacts = (contact) =>{
         contacts.map(()=>{
@@ -55,9 +48,9 @@ export default () => {
     return (
         <>
         
-            <Header />
+            <Header contacts = {contacts}/>
             <Sidebar />
-            <Content data={todos} newData={eventData} userData = {users} contactData = {contacts}/>
+            <Content data={todos} newData={eventData} userData = {users}/>
         </>
     )
 }
