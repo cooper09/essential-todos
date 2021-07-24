@@ -1,5 +1,4 @@
 import { BUTTON_CLICKED } from '../actions/eventOne';
-import buttonClicked from '../actions/eventOne';
 
 const initialState = {
     data: {data: "XYZ"},

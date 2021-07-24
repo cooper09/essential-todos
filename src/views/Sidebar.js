@@ -17,8 +17,6 @@ const Sidebar = () => {
         data: "more data",
         test:"passed"
     }
-
-    const goodie = "stinky feet";
     
     return(
         <Sidebar>

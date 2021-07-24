@@ -1,5 +1,5 @@
-import { BUTTON_CLICKED, buttonClicked } from "../actions/eventOne";
-import * as todosActions from '../actions/todos';
+import { BUTTON_CLICKED } from "../actions/eventOne";
+
 
 const buttonClickFlow = ({ log }) => ({ dispatch }) => next => action => {
     console.log("middleware - buttonClickFlow - action: ", action )

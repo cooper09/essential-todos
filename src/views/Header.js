@@ -8,6 +8,7 @@ const Header = ({contacts}) => {
     let contactData = [];
 
     contacts.map( contact => {
+        console.log("Header contacts: ", contact )
         contactData.push(Object.values(contact));
     })
 

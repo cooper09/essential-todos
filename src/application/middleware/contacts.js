@@ -1,4 +1,4 @@
-import { LOAD_CONTACTS, contactsLoad, loadContactsSuccess, loadContactsFailure } from "../actions/contacts";
+import { LOAD_CONTACTS, loadContactsSuccess, loadContactsFailure } from "../actions/contacts";
 
 const loadContactsFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
     console.log("middleware - loadConactssFlow - action: ", action )

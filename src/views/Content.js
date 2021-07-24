@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { putTodo } from '../application/actions/todos';
-import { getTodos } from '../application/selectors/todos';
+//import { getTodos } from '../application/selectors/todos';
 import styled from "styled-components";
 
 const Content = ({data, newData, userData}) => {
@@ -9,25 +9,11 @@ const Content = ({data, newData, userData}) => {
     console.log("Content New data: ",  newData );
 
     const dispatch = useDispatch();
-    const todos = useSelector(getTodos);
+    //const todos = useSelector(getTodos);
     let firstName = "";
     let lastName = "";
 
-    let stinky = "";
-    for (const [key, value] of Object.entries(newData)) {
-        console.log("new data key: "+ Object.keys(newData) + " value: " + Object.values(newData));
-
-        stinky = value;
-      }
-
     let users = [];
-
-    if (userData) {
-        for (const [key1, value1] of Object.entries(userData)) {
-            console.log("user data: "+`${key1}: ${value1}`);
-            users.push(value1);
-        }
-    }
 
     if (users[0]) {
     console.log("Container - users: ",  Object.values(users[0]) )

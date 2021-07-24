@@ -1,4 +1,4 @@
-import { LOAD_USERS, usersLoad, loadUsersSuccess, loadUsersFailure } from "../actions/users";
+import { LOAD_USERS, loadUsersSuccess, loadUsersFailure } from "../actions/users";
 //import * as uiActions from '../actions/ui';
 
 const loadUsersFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
