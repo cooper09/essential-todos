@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { buttonClicked } from '../application/actions/eventOne';
 import styled from "styled-components";
 
-const Sidebar = () => {
+const Sidebar = ({groups}) => {
+    
+    console.log("Sidebar groups: ", Object.values(groups) );
+    
     const dispatch = useDispatch();
 
     const Sidebar = styled.section`

@@ -11,6 +11,7 @@ import { getUsers } from '../application/selectors/users';
 //import { getLoading } from '../application/selectors/ui';
 import { buttonClicked } from '../application/selectors/eventOne';
 import { getContacts } from '../application/selectors/contacts';
+import { getGroups } from '../application/selectors/groups';
 
 //Function Modules
 import  Header  from './Header.js';
@@ -19,14 +20,15 @@ import  Content  from './Content.js';
 
 export default () => {
     const dispatch = useDispatch();
+    //const loading = useSelector(getLoading);
     const todos = useSelector(getTodos);
     const users = useSelector(getUsers);
-    //const loading = useSelector(getLoading);
 
     const eventData = useSelector(buttonClicked)
 
     //Get all state data at once
     const contacts =  useSelector(getContacts);
+    const groups = useSelector(getGroups);
 
     useEffect(() => {
         dispatch(pageLoaded);
@@ -34,10 +36,9 @@ export default () => {
 
 
     return (
-        <>
-        
+        <>   
             <Header contacts = {contacts}/>
-            <Sidebar />
+            <Sidebar groups={groups}/>
             <Content data={todos} newData={eventData} userData = {users}/>
         </>
     )
