@@ -46,7 +46,7 @@ export default () => {
     return (
         <>   
             <Header contacts = {contacts}/>
-            <Sidebar groups={groups}/>
+            <Sidebar groups={groups} lists={lists} views={views}/>
             <Content data={todos} newData={eventData} userData = {users}/>
         </>
     )

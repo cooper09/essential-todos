@@ -1,1 +1,1 @@
-export const getViews = state => state.users.allViews;
+export const getViews = state => state.views.allViews;

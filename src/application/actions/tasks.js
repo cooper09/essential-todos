@@ -4,7 +4,7 @@ export const LOAD_TASKS_FAILURE = '[TASKS] load failure';
 export const SET_TASKS = '[TASKS] set';
 export const PUT_CONTACT = '[TASKS] put';
 
-export const loadTASKS = {
+export const loadTasks = {
     type: LOAD_TASKS,
 };
 

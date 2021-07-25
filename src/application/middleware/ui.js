@@ -3,6 +3,10 @@ import { PAGE_LOADED } from "../actions/ui";
 import * as userActions from '../actions/users';
 import * as contactActions from '../actions/contacts';
 import * as groupActions from '../actions/groups';
+import * as listActions from '../actions/lists';
+import * as taskActions from '../actions/tasks';
+import * as stockActions from '../actions/stocks';
+import * as viewActions from '../actions/views';
 
 const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
     console.log("middleware - PageLoaderFlow - action: ", action )
@@ -15,6 +19,10 @@ const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
         dispatch(userActions.loadUsers);
         dispatch(contactActions.loadContacts);
         dispatch(groupActions.loadGroups);
+        dispatch(listActions.loadLists);
+        dispatch(taskActions.loadTasks);
+        dispatch(stockActions.loadStocks);
+        dispatch(viewActions.loadViews);
     }
 }
 

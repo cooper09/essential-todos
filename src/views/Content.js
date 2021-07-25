@@ -1,33 +1,36 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { putTodo } from '../application/actions/todos';
-//import { getTodos } from '../application/selectors/todos';
+
+import  Tasks  from './Tasks.js';
+import  Stocks  from './Stocks.js';
+
 import styled from "styled-components";
 
 const Content = ({data, newData, userData}) => {
     console.log("Content received data: ", data );
     console.log("Content New data: ",  newData );
+    console.log("Content User data: ",  userData );
 
     const dispatch = useDispatch();
     //const todos = useSelector(getTodos);
+
+    let firstArr = [];
+    let lastArr = [];
     let firstName = "";
     let lastName = "";
 
-    let users = [];
-
-    if (users[0]) {
-    console.log("Container - users: ",  Object.values(users[0]) )
-
-    let userArr = Object.values(users[0]);
-    console.log("Content - User Array: ", userArr[0]);
-    firstName = userArr[0];
-    lastName = userArr[1];
+    if (userData) {
+        userData.map(user => {
+        console.log("Content user: ", user.first );
+        firstArr.push(user.first)
+        lastArr.push(user.last)
+        })
     }
 
-    console.log("yah: ", Object.values(users))
-
-    
-    //const currentUser = users[0].first 
+    console.log("userArr: ", firstArr[0] )
+    firstName =   firstArr[0];
+    lastName = lastArr[0];
 
     const Content = styled.section`
     padding: 2em;
@@ -57,7 +60,10 @@ const Content = ({data, newData, userData}) => {
                 {todo.title}
             </li>
         ))}
-    </ul></Content>
+    </ul>
+    <Tasks visible={true} />
+    <Stocks visible={true} />
+    </Content>
 
     </>
     )

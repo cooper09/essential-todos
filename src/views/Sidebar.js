@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { buttonClicked } from '../application/actions/eventOne';
 import styled from "styled-components";
 
-const Sidebar = ({groups}) => {
+const Sidebar = ({groups, lists, views}) => {
     
     console.log("Sidebar groups: ", Object.values(groups) );
+    console.log("Sidebar lists: ", lists );
+    console.log("Sidebar views: ", views );
     
     const dispatch = useDispatch();
 

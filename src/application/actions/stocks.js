@@ -4,10 +4,9 @@ export const LOAD_STOCKS_FAILURE = '[STOCKS] load failure';
 export const SET_STOCKS = '[STOCKS] set';
 export const PUT_STOCK = '[STOCKS] put';
 
-export const loadSTOCKS = {
+export const loadStocks = {
     type: LOAD_STOCKS,
 };
-
 
 export const loadStocksSuccess = stocks => ({
     type: LOAD_STOCKS_SUCCESS,
