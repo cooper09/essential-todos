@@ -1,7 +1,7 @@
 import { LOAD_CONTACTS, loadContactsSuccess, loadContactsFailure } from "../actions/contacts";
 
 const loadContactsFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadConactssFlow - action: ", action )
+    //console.log("middleware - loadConactssFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_CONTACTS) {

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { putTodo } from '../application/actions/todos';
+import { getCurrentPage } from '../application/selectors/ui';
 
 import  Tasks  from './Tasks.js';
 import  Stocks  from './Stocks.js';
 
 import styled from "styled-components";
+import { render } from '@testing-library/react';
 
 const Content = ({data, newData, userData}) => {
     console.log("Content received data: ", data );
@@ -13,7 +15,8 @@ const Content = ({data, newData, userData}) => {
     console.log("Content User data: ",  userData );
 
     const dispatch = useDispatch();
-    //const todos = useSelector(getTodos);
+    //lets start off with the current page
+    const currentPage = useSelector(getCurrentPage);
 
     let firstArr = [];
     let lastArr = [];
@@ -41,11 +44,13 @@ const Content = ({data, newData, userData}) => {
     width: 60%;
     height: 90vh;
     `;
+
     return(
         <>
         <Content>
-        <h3>Content</h3>
+        <h3>Content</h3><span>Current Page: {currentPage}</span>
         <p>User: {firstName} {lastName}</p>
+
         <p>Our Data: {newData.data} </p>
         <ul>
         {data.map(todo => (
@@ -61,8 +66,17 @@ const Content = ({data, newData, userData}) => {
             </li>
         ))}
     </ul>
-    <Tasks visible={true} />
-    <Stocks visible={true} />
+
+        { currentPage == "Tasks" &&
+            <h2>
+            <Tasks visible={true} />
+            </h2>
+        }
+        { currentPage == "Stocks" &&
+            <h2>
+            <Stocks visible={true} />
+            </h2>
+        }
     </Content>
 
     </>

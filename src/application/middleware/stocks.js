@@ -1,7 +1,7 @@
 import { LOAD_STOCKS, loadStocksSuccess, loadStocksFailure } from "../actions/stocks";
 
 const loadStocksFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadStocksFlow - action: ", action )
+    //console.log("middleware - loadStocksFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_STOCKS) {

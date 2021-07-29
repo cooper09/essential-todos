@@ -1,7 +1,7 @@
 import { LOAD_GROUPS, loadGroupsSuccess, loadGroupsFailure } from "../actions/groups";
 
 const loadGroupsFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadGroupsFlow - action: ", action )
+    //console.log("middleware - loadGroupsFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_GROUPS) {

@@ -1,4 +1,4 @@
-import { PAGE_LOADED } from "../actions/ui";
+import { PAGE_LOADED, SHOW_TASKS, SHOW_STOCKS } from "../actions/ui";
 //import * as todosActions from '../actions/todos';
 import * as userActions from '../actions/users';
 import * as contactActions from '../actions/contacts';
@@ -7,6 +7,7 @@ import * as listActions from '../actions/lists';
 import * as taskActions from '../actions/tasks';
 import * as stockActions from '../actions/stocks';
 import * as viewActions from '../actions/views';
+import {showTasks} from '../actions/ui';
 
 const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
     console.log("middleware - PageLoaderFlow - action: ", action )
@@ -23,8 +24,13 @@ const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
         dispatch(taskActions.loadTasks);
         dispatch(stockActions.loadStocks);
         dispatch(viewActions.loadViews);
+    }//end if PAGE_LOADED
+
+    if (action.type === SHOW_TASKS) {
+        console.log("UI middleware = SHOW TASKS");
+        dispatch(showTasks());
     }
-}
+}//end pageLoaderFlow
 
 export default [
     pageLoadedFlow

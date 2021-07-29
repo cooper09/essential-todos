@@ -2,7 +2,7 @@ import { LOAD_USERS, loadUsersSuccess, loadUsersFailure } from "../actions/users
 //import * as uiActions from '../actions/ui';
 
 const loadUsersFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadUsersFlow - action: ", action )
+    //console.log("middleware - loadUsersFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_USERS) {

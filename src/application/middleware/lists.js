@@ -1,7 +1,7 @@
 import { LOAD_LISTS, loadListsSuccess, loadListsFailure } from "../actions/lists";
 
 const loadListsFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadListsFlow - action: ", action )
+    //console.log("middleware - loadListsFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_LISTS) {

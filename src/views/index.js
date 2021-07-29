@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //Actions
 import { pageLoaded } from '../application/actions/ui';
@@ -17,6 +17,8 @@ import { getStocks } from '../application/selectors/stocks';
 import { getTasks } from '../application/selectors/tasks';
 import { getViews } from '../application/selectors/views';
 
+import { getCurrentPage } from '../application/selectors/ui';
+
 //Function Modules
 import  Header  from './Header.js';
 import  Sidebar  from './Sidebar.js';
@@ -30,6 +32,8 @@ export default () => {
 
     const eventData = useSelector(buttonClicked)
 
+    console.log("Index - Current page: ", getCurrentPage)
+
     //Get all state data at once
     const contacts =  useSelector(getContacts);
     const groups = useSelector(getGroups);
@@ -38,13 +42,22 @@ export default () => {
     const tasks = useSelector(getTasks);
     const views = useSelector(getViews);
 
+    //lets start off with the current page
+    const currentPage = useSelector(getCurrentPage);
+
     useEffect(() => {
         dispatch(pageLoaded);
     }, [dispatch]);
 
 
+    useEffect(()=>{
+        alert("App...current page: " + currentPage )
+    }, [currentPage])
+
+
+
     return (
-        <>   
+        <>  <p>Current Page: {currentPage}</p>
             <Header contacts = {contacts}/>
             <Sidebar groups={groups} lists={lists} views={views}/>
             <Content data={todos} newData={eventData} userData = {users}/>

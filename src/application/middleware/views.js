@@ -1,7 +1,7 @@
 import { LOAD_VIEWS, loadViewsSuccess, loadViewsFailure } from "../actions/views";
 
 const loadViewsFlow = ({ api }) => ({ dispatch }) => next => async (action) => {
-    console.log("middleware - loadViewsFlow - action: ", action )
+    //console.log("middleware - loadViewsFlow - action: ", action )
     next(action);
 
     if (action.type === LOAD_VIEWS) {
