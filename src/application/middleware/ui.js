@@ -25,11 +25,6 @@ const pageLoadedFlow = ({ log }) => ({ dispatch }) => next => action => {
         dispatch(stockActions.loadStocks);
         dispatch(viewActions.loadViews);
     }//end if PAGE_LOADED
-
-    if (action.type === SHOW_TASKS) {
-        console.log("UI middleware = SHOW TASKS");
-        dispatch(showTasks());
-    }
 }//end pageLoaderFlow
 
 export default [

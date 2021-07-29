@@ -43,21 +43,15 @@ export default () => {
     const views = useSelector(getViews);
 
     //lets start off with the current page
-    const currentPage = useSelector(getCurrentPage);
+    //const currentPage = useSelector(getCurrentPage);
 
     useEffect(() => {
         dispatch(pageLoaded);
     }, [dispatch]);
 
 
-    useEffect(()=>{
-        alert("App...current page: " + currentPage )
-    }, [currentPage])
-
-
-
     return (
-        <>  <p>Current Page: {currentPage}</p>
+        <>  
             <Header contacts = {contacts}/>
             <Sidebar groups={groups} lists={lists} views={views}/>
             <Content data={todos} newData={eventData} userData = {users}/>
